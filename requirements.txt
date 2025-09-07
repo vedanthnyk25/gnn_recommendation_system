@@ -3,19 +3,21 @@
 # --- Configuration Flags ---
 # Use the PyTorch index as an *additional* source, not the only source.
 --extra-index-url https://download.pytorch.org/whl/cu121
-# Find PyG links in its specific repository.
---find-links https://data.pyg.org/whl/torch-2.3.0+cu121.html
+# Find PyG links in its specific repository FOR THE NEW TORCH VERSION
+--find-links https://data.pyg.org/whl/torch-2.5.1+cu121.html
 
 # --- Base Libraries (from PyPI) ---
 streamlit
 pandas
-numpy<2.0
+# Removed numpy<2.0 constraint to allow pip to find a version compatible with Python 3.13
+numpy
 scikit-learn
 requests
 tqdm
 
-# --- PyTorch Libraries (from the extra index and find-links) ---
-torch==2.3.0+cu121
+# --- PyTorch Libraries (UPDATED VERSIONS) ---
+# Upgraded torch to a version compatible with Python 3.13
+torch==2.5.1+cu121
 torch_geometric==2.5.0
 torch_sparse
 torch_scatter

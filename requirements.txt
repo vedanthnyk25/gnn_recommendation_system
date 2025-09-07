@@ -1,4 +1,4 @@
-# requirements.txt (Final Version for CPU Deployment)
+# requirements.txt (Final Version for Robust CPU Deployment)
 
 # --- Base Libraries (from PyPI) ---
 streamlit
@@ -8,19 +8,13 @@ scikit-learn
 requests
 tqdm
 
-# --- PyTorch Libraries (CPU VERSIONS) ---
-# This section ensures torch is installed first
-
-# Use the PyTorch CPU index as an *additional* source.
+# --- PyTorch & PyG Libraries (CPU) ---
+# This structure ensures torch installs first, then the latest compatible PyG libraries.
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch==2.5.1
 
-# --- PyTorch Geometric Libraries ---
-# These will be installed after torch is present.
-
-# Find PyG links in its specific repository for the CPU TORCH VERSION
 --find-links https://data.pyg.org/whl/torch-2.5.1+cpu.html
-torch_geometric==2.5.0
-torch_sparse
-torch_scatter
-torch_cluster
+torch-geometric
+torch-sparse
+torch-scatter
+torch-cluster

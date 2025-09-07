@@ -1,23 +1,22 @@
-# requirements.txt
+# requirements.txt (CPU Version for Streamlit Cloud)
 
 # --- Configuration Flags ---
-# Use the PyTorch index as an *additional* source, not the only source.
---extra-index-url https://download.pytorch.org/whl/cu121
-# Find PyG links in its specific repository FOR THE NEW TORCH VERSION
---find-links https://data.pyg.org/whl/torch-2.5.1+cu121.html
+# Use the PyTorch CPU index as an *additional* source.
+--extra-index-url https://download.pytorch.org/whl/cpu
+# Find PyG links in its specific repository for the CPU TORCH VERSION
+--find-links https://data.pyg.org/whl/torch-2.5.1+cpu.html
 
 # --- Base Libraries (from PyPI) ---
 streamlit
 pandas
-# Removed numpy<2.0 constraint to allow pip to find a version compatible with Python 3.13
 numpy
 scikit-learn
 requests
 tqdm
 
-# --- PyTorch Libraries (UPDATED VERSIONS) ---
-# Upgraded torch to a version compatible with Python 3.13
-torch==2.5.1+cu121
+# --- PyTorch Libraries (CPU VERSIONS) ---
+# Use the CPU-only version of torch
+torch==2.5.1
 torch_geometric==2.5.0
 torch_sparse
 torch_scatter
